@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Simran Sharma is a research-led UX / Product Designer. Selected work: SPILZ (50K+ users), Trip It 2.0, and NxtWave. Empathy, accessibility, data-driven design — with a little sparkle.",
+    "Simran Sharma is a research-led UX / Product Designer. Flagship case study: SPILZ — a Gen Z social platform that grew to 50K+ users across 13 campuses. Empathy, accessibility, data-driven design — with a little sparkle.",
   keywords: [
     "Simran Sharma",
     "UX Designer",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: `${site.name} — ${site.role}`,
     description:
-      "Research-led UX / Product Designer. SPILZ (50K+ users), Trip It 2.0 & NxtWave.",
+      "Research-led UX / Product Designer. Flagship: SPILZ — 50K+ users across 13 campuses.",
     siteName: `${site.name} · Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.role}`,
     description:
-      "Research-led UX / Product Designer. SPILZ (50K+ users), Trip It 2.0 & NxtWave.",
+      "Research-led UX / Product Designer. Flagship: SPILZ — 50K+ users across 13 campuses.",
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],

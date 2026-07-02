@@ -57,47 +57,23 @@ export const process = [
   { step: "04", title: "Ship", accent: "mint" as PastelName, body: "Hand-off, A/B test, measure, and iterate on the metrics that matter." },
 ];
 
-/** Summary cards for the Selected Work grid. Full narratives live in content/case-studies. */
-export type WorkCard = {
-  slug: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  year: string;
-  accent: PastelName;
-  metric: string;
-  cover?: string; // /case-studies/<slug>/cover.* (image slot — filled with real screens)
+/** The single featured case study (SPILZ). */
+export const featuredWork = {
+  slug: "spilz",
+  title: "SPILZ",
+  subtitle:
+    "A social platform for Gen Z built on genuine connection, not curation — researched, designed, and shipped to 13 campuses.",
+  category: "Social · 0→1 Product",
+  year: "2024",
+  accent: "lilac" as PastelName,
+  metric: "50K+ users · 13 campuses",
+  cover: "/case-studies/spilz/hero-photobooth.webp",
+  logo: "/case-studies/spilz/spilz-logo.webp",
+  screens: [
+    "/case-studies/spilz/screen-feed.webp",
+    "/case-studies/spilz/screen-events.webp",
+  ],
 };
-
-export const featuredWork: WorkCard[] = [
-  {
-    slug: "spilz",
-    title: "SPILZ",
-    subtitle: "A social platform for Gen Z built on genuine connection, not curation.",
-    category: "Social · 0→1 Product",
-    year: "2024",
-    accent: "lilac",
-    metric: "50K+ users · 13 campuses",
-  },
-  {
-    slug: "trip-it-2",
-    title: "Trip It 2.0",
-    subtitle: "Redefining how people plan and feel their way through travel.",
-    category: "Travel · Redesign",
-    year: "2024",
-    accent: "sky",
-    metric: "End-to-end redesign",
-  },
-  {
-    slug: "nxtwave",
-    title: "NxtWave",
-    subtitle: "Designing learning experiences at scale for India's next generation of builders.",
-    category: "EdTech · Product",
-    year: "2025",
-    accent: "butter",
-    metric: "Current work",
-  },
-];
 
 /** Lighter grid — professional & visual work. */
 export const moreWork = [

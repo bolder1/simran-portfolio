@@ -15,6 +15,11 @@ export default function Contact() {
   const year = new Date().getFullYear();
   return (
     <footer id="contact" className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-1/2 top-1/2 h-[70vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-70 blur-[130px]" />
+        <div className="absolute -left-24 bottom-0 h-[36vh] w-[36vh] rounded-full bg-rose/35 blur-[110px]" />
+        <div className="absolute -right-24 top-0 h-[36vh] w-[36vh] rounded-full bg-sky/35 blur-[110px]" />
+      </div>
       <div className="relative mx-auto max-w-6xl px-6 py-24 text-center sm:py-32">
         <Star className="absolute left-[12%] top-16 size-8 rotate-12 text-butter" />
         <Sparkle className="absolute right-[14%] top-24 size-9 text-lilac" />
@@ -63,7 +68,7 @@ export default function Contact() {
       <div className="border-t border-ink/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-ink-faint sm:flex-row">
           <p>© {year} Simran Sharma. Made with lots of pastel + a little code.</p>
-          <p>Doodles by fffuel · Built with Next.js + Three.js</p>
+          <p>Doodles by fffuel · Built with Next.js + a pinch of physics</p>
         </div>
       </div>
     </footer>

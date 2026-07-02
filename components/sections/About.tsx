@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Reveal, Pop } from "@/components/motion/Reveal";
-import { ImageSlot } from "@/components/ui/ImageSlot";
 import { site } from "@/lib/site";
 
 export default function About() {
@@ -9,13 +9,16 @@ export default function About() {
       <div className="grid items-start gap-10 md:grid-cols-5 md:gap-14">
         <div className="relative md:col-span-2">
           <Pop>
-            <ImageSlot
-              accent="rose"
-              alt="Portrait of Simran Sharma"
-              label="my photo — coming soon ✿"
-              watermark="S"
-              className="aspect-[4/5]"
-            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-ink/5 bg-gradient-to-b from-rose/50 via-lilac/40 to-sky/40 shadow-[0_10px_40px_-24px_rgba(36,30,51,0.4)]">
+              <div className="absolute left-1/2 top-[58%] h-[70%] w-[110%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-70 blur-[60px]" />
+              <Image
+                src="/simran/simran-cutout.webp"
+                alt="Portrait of Simran Sharma"
+                fill
+                sizes="(min-width: 768px) 40vw, 90vw"
+                className="object-contain object-bottom drop-shadow-[0_18px_30px_rgba(36,30,51,0.22)]"
+              />
+            </div>
           </Pop>
           <div className="absolute -bottom-4 -right-2 rotate-6 rounded-pill bg-butter px-4 py-2 font-hand text-lg text-ink shadow-md">
             powered by black coffee ☕

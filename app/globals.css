@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Cotton Candy Pop — design tokens
+   Personality from color + stickers + doodles + motion.
+   Credibility from a disciplined grid + high-contrast ink type.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Surfaces */
+  --color-cream: #fbf6f0; /* base canvas */
+  --color-surface: #fffdfb; /* raised cards */
+  --color-shell: #f4eadf; /* deeper warm panel */
+
+  /* Ink (all body copy sits here for AA contrast) */
+  --color-ink: #241e33;
+  --color-ink-soft: #5b5470;
+  --color-ink-faint: #8b83a0;
+
+  /* Pastel accents — decorative only (fills, stickers, doodles, section themes) */
+  --color-rose: #f3b9ce;
+  --color-mint: #a7d8c8;
+  --color-sky: #a9cce8;
+  --color-butter: #f4d07a;
+  --color-lilac: #c9b6e8;
+
+  /* Deeper pastel variants for tinted fills / borders */
+  --color-rose-deep: #e58bb0;
+  --color-mint-deep: #7ec2ac;
+  --color-sky-deep: #7fb0da;
+  --color-lilac-deep: #a888d8;
+
+  /* Vivid pop — the single confident accent */
+  --color-magenta: #e0457b; /* fills / large text / active */
+  --color-magenta-ink: #c1326a; /* small text to clear 4.5:1 on cream */
+
+  /* Fonts (mapped from next/font variables) */
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-hand: var(--font-caveat), ui-serif, cursive;
+
+  /* Radii */
+  --radius-card: 1.75rem;
+  --radius-pill: 999px;
+
+  /* Motion easings */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Container */
+  --breakpoint-xs: 400px;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-magenta);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Film grain — makes flat pastels read like printed poster, not sterile CSS
+--------------------------------------------------------------------------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  mix-blend-mode: multiply;
+}
+
+/* ---------------------------------------------------------------------------
+   Lenis smooth-scroll (inlined recommended CSS)
+--------------------------------------------------------------------------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Draw-on doodle paths (GSAP/CSS controlled) */
+.draw-path {
+  stroke-dasharray: var(--len, 1);
+  stroke-dashoffset: var(--len, 1);
+}
+
+/* Reduced motion: kill all decorative animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  body::after {
+    opacity: 0.04;
+  }
+}

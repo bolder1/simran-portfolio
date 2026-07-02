@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:simransharmaa.framer.website)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebSearch",
+      "WebFetch(domain:vercel.com)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:tympanus.net)",
+      "WebFetch(domain:muz.li)",
+      "WebFetch(domain:www.notioly.com)",
+      "WebFetch(domain:www.awwwards.com)",
+      "WebFetch(domain:www.fffuel.co)",
+      "WebFetch(domain:notioly.com)",
+      "WebFetch(domain:notioly.gumroad.com)"
+    ]
+  }
+}

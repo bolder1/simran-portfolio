@@ -39,6 +39,7 @@ export default function Hero() {
 
   return (
     <section
+      id="top"
       ref={root}
       className="relative flex min-h-dvh items-center overflow-hidden"
     >

@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { fontVariables } from "./fonts";
 import { site, SITE_URL } from "@/lib/site";
 import SmoothScroll from "@/components/providers/SmoothScroll";
+import Nav from "@/components/ui/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -55,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={fontVariables}>
       <body className="min-h-dvh antialiased">
+        <Nav />
         <SmoothScroll>{children}</SmoothScroll>
         <Analytics />
         <SpeedInsights />
